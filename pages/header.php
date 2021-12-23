@@ -13,6 +13,12 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?controller=jersey&action=tatca">All Jersey<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kits</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <?php include './views/jerseytype/index.php'; ?>
+                </div>
+            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 mr-2" action='index.php' method='get'>
             <input type="hidden" name='controller' value='jersey'>

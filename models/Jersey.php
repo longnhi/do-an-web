@@ -38,5 +38,14 @@ class Jersey extends Db
         $s ='select * from jersey where tenaodau like ? limit 6 offset '.(($cur_page-1)*6 );
         $a =["%$kw%"];
         return $this->selectQuery($s, $a);
+    }
+    
+    function jerseyByLoai($ml)
+    {
+        return $this->selectQuery('select * from jersey where maloai = ?',[$ml]);
+    }
+
+    function jerseyByTypePaging($ml,$cur_page){
+        return $this->selectQuery('select * from jersey where maloai = ? limit 6 offset '.(($cur_page-1)*6 ),[$ml]);
     }                                    
 }
