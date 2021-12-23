@@ -29,3 +29,11 @@ if($action == 'xulylogin')
         include './views/khachhang/login.php';
     }
 }
+
+if($action == 'dangxuat')
+{
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+    session_destroy();
+    header('Location: ./index.php');
+}
