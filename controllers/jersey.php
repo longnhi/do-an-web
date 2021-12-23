@@ -56,3 +56,16 @@ if ($action == 'jerseytype') {
     include './views/jersey/index.php';
     include './views/jersey/jersey_paging.php';
 }
+
+if ($action == 'club') {
+    $id = Utilities::get('id');
+    $data = $jersey->jerseyByClub($id);
+
+    $count = count($data);
+    $totalPages = ceil($count / 6);
+    $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
+
+    $datapage = $jersey->jerseyByClubPaging($id, $cur_page);
+    include './views/jersey/index.php';
+    include './views/jersey/jersey_paging.php';
+}
