@@ -9,4 +9,10 @@ class KhachHang extends Db
     {
         return $this->selectQuery('select * from customer');
     }
+
+    function getUserLogin($email,$password)
+    {
+        $data= $this->selectQuery('select * from customer where email like ? and password like ?',[$email,$password]);
+        return $data;
+    }
 }

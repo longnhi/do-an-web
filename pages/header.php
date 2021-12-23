@@ -20,5 +20,24 @@
             <input class="form-control mr-sm-2" style="width: 250px;" type="text" placeholder="Search" name='kw'>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <?php
+        if(!isset($_SESSION['email'])){?>
+            <ul class="navbar-nav navbar-right mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php?controller=khachhang&action=dangnhap">Sign In<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <?php
+        }else{?>
+        <ul class="navbar-nav navbar-right mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><?php echo ($_SESSION['email']);?><span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+            <a class="nav-link" href="#">Log out<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <?php
+        }?>
     </div>
 </nav>
