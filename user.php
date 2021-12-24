@@ -32,3 +32,8 @@ if($action == 'login'){
         include './views/khachhang/login.php';
     }
 }
+
+if($action=='logout')
+{
+    header("Location: ./index.php");
+}
