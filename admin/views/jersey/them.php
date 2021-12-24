@@ -1,5 +1,5 @@
 <div class="container mt-3 mb-3">
-<form class="form-horizontal col-sm-6" action="./index.php?controller=jersey&action=xulythem" method="POST"  style="margin: auto;">
+<form class="form-horizontal col-sm-6" action="./index.php?controller=jersey&action=xulythem" method="POST" enctype="multipart/form-data" style="margin: auto;">
     <div class="row form-group">
         <div class="col col-sm-3"><label for="tenaodau">Tên áo đấu:</label></div>
         <div class="col-sm-9">
