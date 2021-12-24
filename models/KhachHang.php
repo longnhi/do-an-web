@@ -9,4 +9,23 @@ class KhachHang extends Db
     {
         return $this->selectQuery('select * from customer');
     }
+
+    function getUserLogin($email,$password)
+    {
+        $data= $this->selectQuery('select * from customer where email like ? and password like ?',[$email,$password]);
+        return $data;
+    }
+    
+    function checkEmail($email)
+    {
+        $data= $this->selectQuery('select * from customer where email like ? ',[$email]);
+        return $data;
+    }
+
+    function them($email, $password, $hoten)
+    {
+        $sql_them = "INSERT INTO `customer`(`email`, `password`, `hoten`) 
+                    VALUES (?,?,?)";
+        return $this->updateQuery($sql_them, [$email, $password, $hoten]);
+    }
 }
